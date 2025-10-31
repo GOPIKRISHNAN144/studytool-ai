@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Study Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: rgba(0,0,0,0.3);
+      padding: 20px;
+      font-size: 1.6em;
+      font-weight: bold;
+    }
+    main {
+      margin-top: 40px;
+      padding: 20px;
+    }
+    textarea {
+      width: 80%;
+      height: 120px;
+      border-radius: 10px;
+      border: none;
+      padding: 10px;
+      font-size: 1em;
+      outline: none;
+    }
+    button {
+      margin-top: 15px;
+      padding: 12px 25px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 8px;
+      background-color: #fff;
+      color: #0072ff;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #e3e3e3;
+    }
+    #output {
+      margin-top: 30px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 10px;
+      padding: 15px;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <header>📘 AI Study Tool</header>
+  <main>
+    <h2>Ask me anything related to your studies 💬</h2>
+    <textarea id="input" placeholder="Type your question here..."></textarea><br>
+    <button onclick="generateAnswer()">Get Answer</button>
+    <div id="output"></div>
+  </main>
+
+  <script>
+    function generateAnswer() {
+      let q = document.getElementById('input').value.trim();
+      let output = document.getElementById('output');
+      if (q === "") {
+        output.innerHTML = "Please type a question first!";
+        return;
+      }
+      output.innerHTML = "Thinking... 🤔";
+      setTimeout(() => {
+        output.innerHTML = 
+          "This is your AI's answer simulation. In future, we can connect this to a real AI API for smart responses!";
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
